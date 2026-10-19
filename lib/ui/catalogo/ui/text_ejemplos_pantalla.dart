@@ -1,3 +1,4 @@
+import 'package:catalogo_widget_flutter/ui/core/ui/texto_jerarquico.dart';
 import 'package:flutter/material.dart';
 
 class TextEjemplosPantalla extends StatelessWidget {
@@ -10,7 +11,9 @@ class TextEjemplosPantalla extends StatelessWidget {
       body: ListView(
         padding: const EdgeInsets.all(16),
         children: [
-          // Aquí añadiremos los ejemplos del tutorial.
+          TextoJerarquico(texto: "cuerpo", tipo: TipoTexto.cuerpo),
+          TextoJerarquico(texto: "subtitulo", tipo: TipoTexto.subtitulo),
+          TextoJerarquico(texto: "titulo", tipo: TipoTexto.titulo),
         ],
       ),
     );
