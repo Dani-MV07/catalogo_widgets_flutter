@@ -1,4 +1,5 @@
 import 'package:catalogo_widget_flutter/ui/core/ui/texto_jerarquico.dart';
+import 'package:catalogo_widget_flutter/ui/core/ui/texto_resumen.dart';
 import 'package:flutter/material.dart';
 
 class TextEjemplosPantalla extends StatelessWidget {
@@ -14,6 +15,7 @@ class TextEjemplosPantalla extends StatelessWidget {
           TextoJerarquico(texto: "cuerpo", tipo: TipoTexto.cuerpo),
           TextoJerarquico(texto: "subtitulo", tipo: TipoTexto.subtitulo),
           TextoJerarquico(texto: "titulo", tipo: TipoTexto.titulo),
+          TextoResumen(texto: "texto \n Eloy \n idiota", centrado: true),
         ],
       ),
     );

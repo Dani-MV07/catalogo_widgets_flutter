@@ -10,7 +10,11 @@ class ImageEjemplosPantalla extends StatelessWidget {
       body: ListView(
         padding: const EdgeInsets.all(16),
         children: [
-          // Aquí añadiremos los ejemplos del tutorial.
+          Image.network(
+            'https://flutter.github.io/assets-for-api-docs/assets/widgets/owl.jpg',
+            width: 240,
+            height: 160,
+          ),
         ],
       ),
     );
