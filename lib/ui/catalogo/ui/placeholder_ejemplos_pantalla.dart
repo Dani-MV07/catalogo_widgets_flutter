@@ -10,7 +10,10 @@ class PlaceholderEjemplosPantalla extends StatelessWidget {
       body: ListView(
         padding: const EdgeInsets.all(16),
         children: [
-          // Aquí añadiremos los ejemplos del tutorial.
+          const SizedBox(
+            height: 140,
+            child: Placeholder(child: Center(child: Text('Aquí irá el mapa'))),
+          ),
         ],
       ),
     );

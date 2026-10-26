@@ -12,10 +12,29 @@ class TextEjemplosPantalla extends StatelessWidget {
       body: ListView(
         padding: const EdgeInsets.all(16),
         children: [
-          TextoJerarquico(texto: "cuerpo", tipo: TipoTexto.cuerpo),
-          TextoJerarquico(texto: "subtitulo", tipo: TipoTexto.subtitulo),
-          TextoJerarquico(texto: "titulo", tipo: TipoTexto.titulo),
-          TextoResumen(texto: "texto \n Eloy \n idiota", centrado: true),
+          Card(
+            child: Padding(
+              padding: const EdgeInsets.all(16),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: const [
+                  SizedBox(width: 300, height: 5),
+                  TextoJerarquico(
+                    texto: 'Ruta del río',
+                    tipo: TipoTexto.titulo,
+                  ),
+                  TextoJerarquico(
+                    texto: "Valencia, Beniganim",
+                    tipo: TipoTexto.subtitulo,
+                  ),
+                  TextoJerarquico(
+                    texto: "Lugar donde pasan la mayoria de rios de España",
+                    tipo: TipoTexto.cuerpo,
+                  ),
+                ],
+              ),
+            ),
+          ),
         ],
       ),
     );
