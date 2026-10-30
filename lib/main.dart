@@ -15,6 +15,7 @@ class MyApp extends StatelessWidget {
       title: 'Catalogo Widgets Flutter',
       theme: ThemeData(colorScheme: .fromSeed(seedColor: Colors.deepPurple)),
       home: const CatalogoPantalla(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
