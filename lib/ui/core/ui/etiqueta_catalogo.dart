@@ -1,22 +1,35 @@
 import 'package:flutter/material.dart';
 
+enum VarianteEtiqueta { normal, destacada, aviso }
+
 class EtiquetaCatalogo extends StatelessWidget {
   final String texto;
-  final bool destacada;
+  final VarianteEtiqueta variante;
 
   const EtiquetaCatalogo({
     super.key,
     required this.texto,
-    this.destacada = false,
+    this.variante = VarianteEtiqueta.normal,
   });
 
   @override
   Widget build(BuildContext context) {
-    final estilo = TextStyle(
-      fontSize: destacada ? 22 : 16,
-      fontWeight: destacada ? FontWeight.bold : FontWeight.normal,
-      color: destacada ? Colors.indigo : Colors.black87,
-    );
+    final estilo = switch (variante) {
+      VarianteEtiqueta.normal => const TextStyle(
+        fontSize: 16,
+        color: Colors.black87,
+      ),
+      VarianteEtiqueta.destacada => const TextStyle(
+        fontSize: 24,
+        fontWeight: FontWeight.bold,
+        color: Colors.indigo,
+      ),
+      VarianteEtiqueta.aviso => const TextStyle(
+        fontSize: 18,
+        fontWeight: FontWeight.bold,
+        color: Colors.deepOrange,
+      ),
+    };
 
     return Text(texto, style: estilo);
   }

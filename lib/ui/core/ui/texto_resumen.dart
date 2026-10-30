@@ -10,7 +10,7 @@ class TextoResumen extends StatelessWidget {
     required this.texto,
     this.lineas = 2,
     this.centrado = false,
-  });
+  }) : assert(lineas > 0, 'lineas debe ser positivo');
 
   @override
   Widget build(BuildContext context) {

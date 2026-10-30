@@ -12,44 +12,25 @@ class TextoJerarquico extends StatelessWidget {
     this.tipo = TipoTexto.cuerpo,
   });
 
-  Color getColorLetra() {
-    Color colorLetra = switch (tipo) {
-      TipoTexto.cuerpo => Colors.black,
-      TipoTexto.subtitulo => Colors.blueGrey,
-      TipoTexto.titulo => Colors.indigo,
-    };
-    return colorLetra;
-  }
-
-  FontWeight getAnchoLetra() {
-    FontWeight anchoLetra = switch (tipo) {
-      TipoTexto.cuerpo => FontWeight.normal,
-      TipoTexto.subtitulo => FontWeight.normal,
-      TipoTexto.titulo => FontWeight.bold,
-    };
-    return anchoLetra;
-  }
-
-  double getTamanyoTexto() {
-    double tamanyoTexto = switch (tipo) {
-      TipoTexto.cuerpo => 16,
-      TipoTexto.subtitulo => 10,
-      TipoTexto.titulo => 20,
-    };
-    return tamanyoTexto;
-  }
-
   @override
   Widget build(BuildContext context) {
-    double tamanyoTexto = getTamanyoTexto();
-    FontWeight anchoLetra = getAnchoLetra();
-    Color colorLetra = getColorLetra();
-
-    final estilo = TextStyle(
-      fontSize: tamanyoTexto,
-      fontWeight: anchoLetra,
-      color: colorLetra,
-    );
+    final estilo = switch (tipo) {
+      TipoTexto.titulo => const TextStyle(
+        fontSize: 24,
+        fontWeight: FontWeight.bold,
+        color: Colors.indigo,
+      ),
+      TipoTexto.subtitulo => const TextStyle(
+        fontSize: 20,
+        fontWeight: FontWeight.w500,
+        color: Colors.blueGrey,
+      ),
+      TipoTexto.cuerpo => const TextStyle(
+        fontSize: 16,
+        fontWeight: FontWeight.normal,
+        color: Colors.black,
+      ),
+    };
 
     return Text(texto, style: estilo);
   }
