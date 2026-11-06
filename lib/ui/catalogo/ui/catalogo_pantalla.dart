@@ -1,4 +1,8 @@
+import 'package:catalogo_widget_flutter/data/repositories/articulos_repository.dart';
+import 'package:catalogo_widget_flutter/data/services/articulos_local_service.dart';
 import 'package:catalogo_widget_flutter/ui/catalogo/ui/contenedores_1_ejemplos_pantalla.dart';
+import 'package:catalogo_widget_flutter/ui/prestamos/ui/ejemplo_datos_pantalla.dart';
+import 'package:catalogo_widget_flutter/ui/inscripcion/ui/inscripcion_ejemplo_pantalla.dart';
 import 'package:flutter/material.dart';
 
 import 'text_ejemplos_pantalla.dart';
@@ -100,6 +104,43 @@ class CatalogoPantalla extends StatelessWidget {
                 ),
               );
             },
+          ),
+          ListTile(
+            leading: const Icon(Icons.inventory_2_outlined),
+            title: const Text('Ejemplo con datos'),
+            trailing: const Icon(Icons.chevron_right),
+            onTap: () {
+              Navigator.of(context).push(
+                MaterialPageRoute<void>(
+                  builder: (context) => EjemploDatosPantalla(
+                    repository: ArticulosRepository(
+                      service: const ArticulosLocalService(),
+                    ),
+                  ),
+                ),
+              );
+            },
+          ),
+          ListTile(
+            leading: const Icon(Icons.how_to_reg_outlined),
+            title: const Text('Inscripción a talleres'),
+            trailing: const Icon(Icons.chevron_right),
+            onTap: () {
+              Navigator.of(context).push(
+                MaterialPageRoute<void>(
+                  builder: (context) => const InscripcionEjemploPantalla(),
+                ),
+              );
+            },
+          ),
+          ListTile(
+            leading: const Icon(Icons.login),
+            title: const Text('Login de demostración'),
+            onTap: () => Navigator.of(context).push<void>(
+              MaterialPageRoute<void>(
+                builder: (_) => const InscripcionEjemploPantalla(),
+              ),
+            ),
           ),
         ],
       ),
