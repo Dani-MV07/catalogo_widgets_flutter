@@ -1,3 +1,4 @@
+import 'package:catalogo_widget_flutter/app/router/app_router.dart';
 import 'package:catalogo_widget_flutter/ui/catalogo/ui/catalogo_pantalla.dart';
 import 'package:flutter/material.dart';
 
@@ -11,11 +12,17 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Catalogo Widgets Flutter',
-      theme: ThemeData(colorScheme: .fromSeed(seedColor: Colors.deepPurple)),
-      home: const CatalogoPantalla(),
+    return MaterialApp.router(
       debugShowCheckedModeBanner: false,
+      title: 'Catálogo con rutas',
+      routerConfig: crearRouter(),
     );
+
+    // MaterialApp(
+    //   title: 'Catalogo Widgets Flutter',
+    //   theme: ThemeData(colorScheme: .fromSeed(seedColor: Colors.deepPurple)),
+    //   home: const CatalogoPantalla(),
+    //   debugShowCheckedModeBanner: false,
+    // );
   }
 }

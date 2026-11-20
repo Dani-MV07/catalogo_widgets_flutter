@@ -4,6 +4,7 @@ import 'package:catalogo_widget_flutter/ui/catalogo/ui/contenedores_1_ejemplos_p
 import 'package:catalogo_widget_flutter/ui/prestamos/ui/ejemplo_datos_pantalla.dart';
 import 'package:catalogo_widget_flutter/ui/inscripcion/ui/inscripcion_ejemplo_pantalla.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 import 'text_ejemplos_pantalla.dart';
 import 'image_ejemplos_pantalla.dart';
@@ -141,6 +142,16 @@ class CatalogoPantalla extends StatelessWidget {
                 builder: (_) => const InscripcionEjemploPantalla(),
               ),
             ),
+          ),
+          ListTile(
+            title: const Text('Ayuda con go_router'),
+
+            onTap: () async {
+              final elegido = await context.push<String>('/ayuda');
+              if (!context.mounted || elegido == null) return;
+              ScaffoldMessenger.of(context)
+                  .showSnackBar(SnackBar(content: Text(elegido)));
+            },
           ),
         ],
       ),
